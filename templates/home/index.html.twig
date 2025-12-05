@@ -26,16 +26,5 @@
     			}
 }) }}
 			{{ form_end(form)}}
-			{% for poll in app.flashes('poll') %}
-				<div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs hover:bg-neutral-secondary-medium">
-					<p class='text-body'>Sexe :
-						<strong>{{ poll.sexe }}</strong>
-					</p>
-					<p class='text-body'>Âge  :
-						<strong>{{ poll.age }}</strong>
-					</p>
-				</div>
-			{% endfor %}
-
 		</section>
 	{% endblock %}

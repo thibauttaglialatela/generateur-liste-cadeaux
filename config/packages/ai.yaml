@@ -6,8 +6,11 @@ ai:
 
     agent:
         gift_generator:
-            platform: mistral
-            model: mistral-small-latest
-            options:
-                temperature: 0.7
-                max_tokens: 300
+            platform: Symfony\AI\Platform\PlatformInterface
+            model: 
+                name: 'mistral-small-latest'
+                options:
+                    temperature: 0.7
+                    max_tokens: 2000
+                system_prompt: 'Vous étes un assistant utile et répondez en français'
+
