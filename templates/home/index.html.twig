@@ -10,21 +10,25 @@
 
 			<h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Pas d'idée de cadeaux pour Noël ou un anniversaire ?</h1>
 			<p class="mb-3 text-lg text-body md:text-xl text-left">Donnez simplement l'age et le sexe de la personne à qui vous voulez faire un cadeau et nous vous fournirons simplement une liste de cadeaux.</p>
-			{{ form_start(form, {
+			<section data-controller="gift" data-action="submit->gift#submit">
+				{{ form_start(form, {
 				'attr': {'class': 'max-w-sm mx-auto'}
 			})}}
-			{{ form_label(form.sexe)}}
-			{{ form_widget(form.sexe)}}
-			{{ form_label(form.age)}}
-			{{ form_errors(form.age) }}
-			{{ form_widget(form.age)}}
-			{{ form_help(form.age)}}
-			{{ form_row(form.submit, {
+				{{ form_label(form.sexe)}}
+				{{ form_widget(form.sexe)}}
+				{{ form_label(form.age)}}
+				{{ form_errors(form.age) }}
+				{{ form_widget(form.age)}}
+				{{ form_help(form.age)}}
+				{{ form_row(form.submit, {
     			'label': 'Envoyer',
     			'attr': {
         		'class': 'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5'
     			}
 }) }}
-			{{ form_end(form)}}
+				{{ form_end(form)}}
+			</section>
+
+			<article id="result" class="w-full max-w-sm lg:max-w-3xl p-6 bg-orange-50 border-solid border-amber-500 border rounded-xl shadow-xs mx-auto mt-3"></article>
 		</section>
 	{% endblock %}
