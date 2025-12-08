@@ -12,7 +12,7 @@
 			<p class="mb-3 text-lg text-body md:text-xl text-left">Donnez simplement l'age et le sexe de la personne à qui vous voulez faire un cadeau et nous vous fournirons simplement une liste de cadeaux.</p>
 			<section data-controller="gift" data-action="submit->gift#submit">
 				{{ form_start(form, {
-				'attr': {'class': 'max-w-sm mx-auto'}
+				'attr': {'class': 'max-w-sm lg:max-w-lg mx-auto'}
 			})}}
 				{{ form_label(form.sexe)}}
 				{{ form_widget(form.sexe)}}
@@ -23,12 +23,12 @@
 				{{ form_row(form.submit, {
     			'label': 'Envoyer',
     			'attr': {
-        		'class': 'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5'
+        		'class': 'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br hover:ring-4 hover:outline-none hover:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 font-medium rounded-lg text-sm px-4 py-2.5 text-center leading-5 mt-2'
     			}
 }) }}
 				{{ form_end(form)}}
 			</section>
 
-			<article id="result" class="w-full max-w-sm lg:max-w-3xl p-6 bg-orange-50 border-solid border-amber-500 border rounded-xl shadow-xs mx-auto mt-3"></article>
+			<article id="result" class="w-full max-w-sm lg:max-w-lg p-6 bg-green-50 border-solid border-green-500 border rounded-xl shadow-xs mx-auto mt-3"></article>
 		</section>
 	{% endblock %}
