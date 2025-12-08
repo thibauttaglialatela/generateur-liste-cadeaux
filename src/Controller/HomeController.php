@@ -48,6 +48,7 @@ Aucune décoration, aucun ```, aucun texte. Seulement du JSON valide.
 PROMPT;
 
             $answer = $this->apiMistral->submit($prompt);
+
             // Extraire tout le JSON présent dans la réponse
             if (preg_match('/\{.*\}/s', $answer, $matches)) {
                 $json = json_decode($matches[0], true);
