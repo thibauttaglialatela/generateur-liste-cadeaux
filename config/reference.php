@@ -1562,6 +1562,16 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *             api_key: string,
  *             http_client?: string, // Service ID of the HTTP client to use // Default: "http_client"
  *         },
+ *         generic?: array<string, array{ // Default: []
+ *             base_url: string,
+ *             api_key?: string,
+ *             http_client?: string, // Service ID of the HTTP client to use // Default: "http_client"
+ *             model_catalog?: string, // Service ID of the model catalog to use
+ *             supports_completions?: bool, // Default: true
+ *             supports_embeddings?: bool, // Default: true
+ *             completions_path?: string, // Default: "/v1/chat/completions"
+ *             embeddings_path?: string, // Default: "/v1/embeddings"
+ *         }>,
  *         huggingface?: array{
  *             api_key: string,
  *             provider?: string, // Default: "hf-inference"
@@ -1650,7 +1660,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         fallback: string, // Service ID of the fallback agent for unmatched requests
  *     }>,
  *     store?: array{
- *         azure_search?: array<string, array{ // Default: []
+ *         azuresearch?: array<string, array{ // Default: []
  *             endpoint: string,
  *             api_key: string,
  *             index_name: string,
@@ -1662,7 +1672,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *             cache_key?: string, // The name of the store will be used if the key is not set
  *             strategy?: string,
  *         }>,
- *         chroma_db?: array<string, array{ // Default: []
+ *         chromadb?: array<string, array{ // Default: []
  *             client?: string, // Default: "Codewithkyrian\\ChromaDB\\Client"
  *             collection: string,
  *         }>,
@@ -1680,7 +1690,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *             metric?: string, // Default: "cosine"
  *             endpoint?: string,
  *         }>,
- *         manticore?: array<string, array{ // Default: []
+ *         manticoresearch?: array<string, array{ // Default: []
  *             endpoint?: string,
  *             table?: string,
  *             field?: string, // Default: "_vectors"
@@ -1739,6 +1749,14 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *             distance?: string, // Default: "cosine"
  *             quantization?: bool,
  *         }>,
+ *         opensearch?: array<string, array{ // Default: []
+ *             endpoint?: string,
+ *             index_name?: string,
+ *             vectors_field?: string, // Default: "_vectors"
+ *             dimensions?: int, // Default: 1536
+ *             space_type?: string, // Default: "l2"
+ *             http_client?: string, // Default: "http_client"
+ *         }>,
  *         pinecone?: array<string, array{ // Default: []
  *             client?: string, // Default: "Probots\\Pinecone\\Client"
  *             namespace?: string,
@@ -1751,7 +1769,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *             password?: string,
  *             table_name?: string,
  *             vector_field?: string, // Default: "embedding"
- *             distance?: cosine|inner_product|l1|l2, // Distance metric to use for vector similarity search // Default: "l2"
+ *             distance?: "cosine"|"inner_product"|"l1"|"l2", // Distance metric to use for vector similarity search // Default: "l2"
  *             dbal_connection?: string,
  *         }>,
  *         qdrant?: array<string, array{ // Default: []
@@ -1767,7 +1785,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *             client?: string, // a service id of a Redis client
  *             index_name?: string,
  *             key_prefix?: string, // Default: "vector:"
- *             distance?: \Symfony\AI\Store\Bridge\Redis\Distance::Cosine|\Symfony\AI\Store\Bridge\Redis\Distance::L2|\Symfony\AI\Store\Bridge\Redis\Distance::Ip, // Distance metric to use for vector similarity search // Default: "COSINE"
+ *             distance?: "COSINE"|"L2"|"IP", // Distance metric to use for vector similarity search // Default: "COSINE"
  *         }>,
  *         supabase?: array<string, array{ // Default: []
  *             http_client?: string, // Service ID of the HTTP client to use // Default: "http_client"

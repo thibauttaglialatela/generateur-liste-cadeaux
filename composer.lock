@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b769abe7acc5b38aa2cb67e28f797e0",
+    "content-hash": "90b882c2db80370d1a78efe63f0ab817",
     "packages": [
         {
             "name": "composer/semver",
@@ -2104,12 +2104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ai-bundle.git",
-                "reference": "e492822fbe919046a0b26184ecccfdfe831348d3"
+                "reference": "15786b51bc16868d5b91557be688435a1aee21d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ai-bundle/zipball/e492822fbe919046a0b26184ecccfdfe831348d3",
-                "reference": "e492822fbe919046a0b26184ecccfdfe831348d3",
+                "url": "https://api.github.com/repos/symfony/ai-bundle/zipball/15786b51bc16868d5b91557be688435a1aee21d7",
+                "reference": "15786b51bc16868d5b91557be688435a1aee21d7",
                 "shasum": ""
             },
             "require": {
@@ -2125,17 +2125,16 @@
                 "symfony/framework-bundle": "^7.3|^8.0",
                 "symfony/string": "^7.3|^8.0"
             },
-            "conflict": {
-                "mongodb/mongodb": "<1.21"
-            },
             "require-dev": {
-                "codewithkyrian/chromadb-php": "^0.2.1 || ^0.3 || ^0.4",
                 "google/auth": "^1.47",
-                "mongodb/mongodb": "^1.21 || ^2.0",
                 "phpstan/phpstan": "^2.1",
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "phpunit/phpunit": "^11.5",
-                "probots-io/pinecone-php": "^1.0",
+                "symfony/ai-chroma-db-store": "@dev",
+                "symfony/ai-mongo-db-store": "@dev",
+                "symfony/ai-pinecone-store": "@dev",
+                "symfony/ai-postgres-store": "@dev",
+                "symfony/ai-redis-store": "@dev",
                 "symfony/expression-language": "^7.3|^8.0",
                 "symfony/security-core": "^7.3|^8.0",
                 "symfony/translation": "^7.3|^8.0"
@@ -2196,7 +2195,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-04T06:36:18+00:00"
+            "time": "2025-12-08T13:20:26+00:00"
         },
         {
             "name": "symfony/ai-chat",
@@ -11254,7 +11253,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "symfony/ai-bundle": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
